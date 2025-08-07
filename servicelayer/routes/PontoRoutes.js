@@ -21,6 +21,7 @@ class PontoRoutes extends IRoutes {
         this.router.post('/pontos/upload-csv', authMiddleware, upload.single('file'),
             (req, res) => this.pontoController.receberRegistroPontoCSV(req, res)
         );
+        this.router.get('/pontos',authMiddleware, (req, res) => this.pontoController.findAll(req, res));
         this.router.get('/pontos/:id', authMiddleware, (req, res) => this.pontoController.findById(req, res));
         this.router.get('/pontos/usuario/:id', authMiddleware, (req, res) => this.pontoController.findByUsuarioId(req, res));
         this.router.put('/pontos/:id', authMiddleware, (req, res) => this.pontoController.update(req, res));
