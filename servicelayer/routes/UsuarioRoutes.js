@@ -15,6 +15,9 @@ class UsuarioRoutes extends IRoutes {
     }
 
     createRoutes() {
+        this.router.get('/api', (req, res) => {
+            res.status(200).json({ message: 'SGP API' });
+        });
         this.router.post('/usuarios', (req, res) => this.usuarioController.createUsuario(req, res));
         this.router.post('/usuarios/login', (req, res) => this.usuarioController.loginUsuario(req, res));
 
