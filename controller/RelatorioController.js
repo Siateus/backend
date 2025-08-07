@@ -1,8 +1,11 @@
+const path = require('path');
+const config = require('../config.js');
 const IRelatorioController = require('./IRelatorioController');
-const RelatorioDAO = require('../persistencelayer/dao/RelatorioDAO');
-const { gerarRelatorioSchema } = require('../servicelayer/dto/GerarRelatorioReq');
-const RelatorioRes = require('../servicelayer/dto/RelatorioRes');
+const RelatorioDAO = require(path.join(__dirname, '..', 'persistencelayer', 'dao', config.RelatorioDAO));
+const { gerarRelatorioSchema } = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.GerarRelatorioReq));
+const RelatorioRes = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.RelatorioRes));
 const csv = require('csv-stringify');
+
 const relatorioDAO = new RelatorioDAO();
 
 class RelatorioController extends IRelatorioController {

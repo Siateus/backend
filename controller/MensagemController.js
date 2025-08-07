@@ -1,11 +1,15 @@
+const path = require('path');
+const config = require('../config.js');
 const IMensagemController = require('./IMensagemController');
-const MensagemDAO = require('../persistencelayer/dao/MensagemDAO');
-const { mensagemCreateSchema } = require('../servicelayer/dto/MensagemCreateReq');
-const MensagemResponseDTO = require('../servicelayer/dto/MensagemResponseDTO');
-const NotificacaoDAO = require("../persistencelayer/dao/NotificacaoDAO");
+const MensagemDAO = require(path.join(__dirname, '..', 'persistencelayer', 'dao', config.MensagemDAO));
+const { mensagemCreateSchema } = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.MensagemCreateReq));
+const MensagemResponseDTO = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.MensagemResponseDTO));
+const NotificacaoDAO = require(path.join(__dirname, '..', 'persistencelayer', 'dao', config.NotificacaoDAO));
 
-const notificacaoDAO = new NotificacaoDAO();
 const mensagemDAO = new MensagemDAO();
+const notificacaoDAO = new NotificacaoDAO();
+
+
 
 class MensagemController extends IMensagemController {
 

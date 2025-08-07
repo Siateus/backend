@@ -1,7 +1,9 @@
+const path = require('path');
+const config = require('../config.js');
 const INotificacaoController = require('./INotificacaoController');
-const NotificacaoDAO = require('../persistencelayer/dao/NotificacaoDAO');
-const NotificacaoResponseDTO = require('../servicelayer/dto/NotificacaoResponseDTO');
-const { notificacaoCreateSchema } = require('../servicelayer/dto/NotificacaoCreateReq');
+const NotificacaoDAO = require(path.join(__dirname, '..', 'persistencelayer', 'dao', config.NotificacaoDAO));
+const NotificacaoResponseDTO = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.NotificacaoResponseDTO));
+const { notificacaoCreateSchema } = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.NotificacaoCreateReq));
 
 const notificacaoDAO = new NotificacaoDAO();
 

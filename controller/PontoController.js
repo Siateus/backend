@@ -1,9 +1,11 @@
+const path = require('path');
+const config = require('../config.js');
 const IPontoController = require('./IPontoController');
-const PontoDAO = require('../persistencelayer/dao/PontoDAO');
-const PontoResponseDTO = require('../servicelayer/dto/PontoResponseDTO');
-const { pontoUpdateSchema } = require('../servicelayer/dto/PontoUpdateReq');
+const PontoDAO = require(path.join(__dirname, '..', 'persistencelayer', 'dao', config.PontoDAO));
+const NotificacaoDAO = require(path.join(__dirname, '..', 'persistencelayer', 'dao', config.NotificacaoDAO));
+const PontoResponseDTO = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.PontoResponseDTO));
+const { pontoUpdateSchema } = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.PontoUpdateReq));
 const csv = require('csv-parser');
-const NotificacaoDAO = require("../persistencelayer/dao/NotificacaoDAO")
 const fs = require('fs');
 
 const notificacaoDAO = new NotificacaoDAO();

@@ -1,10 +1,12 @@
+const path = require('path');
+const config = require('../config.js');
 const IUsuarioController = require('./IUsuarioController');
-const UsuarioDAO = require('../persistencelayer/dao/UsuarioDAO');
-const UsuarioResponseDTO = require('../servicelayer/dto/UsuarioResponseDTO');
-const { usuarioCreateSchema } = require('../servicelayer/dto/UsuarioCreate');
-const { usuarioLoginSchema } = require('../servicelayer/dto/UsuarioLogin');
-const { usuarioUpdateSchema } = require('../servicelayer/dto/UsuarioUpdateReq');
-const NotificacaoDAO = require('../persistencelayer/dao/NotificacaoDAO');
+const UsuarioDAO = require(path.join(__dirname, '..', 'persistencelayer', 'dao', config.UsuarioDAO));
+const NotificacaoDAO = require(path.join(__dirname, '..', 'persistencelayer', 'dao', config.NotificacaoDAO));
+const UsuarioResponseDTO = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.UsuarioResponseDTO));
+const { usuarioCreateSchema } = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.UsuarioCreate));
+const { usuarioLoginSchema } = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.UsuarioLogin));
+const { usuarioUpdateSchema } = require(path.join(__dirname, '..', 'servicelayer', 'dto', config.UsuarioUpdateReq));
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 

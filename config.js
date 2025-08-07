@@ -21,6 +21,20 @@ const config = {
     "PontoDAO": "PontoDAO.js",
     "RelatorioDAO": "RelatorioDAO.js",
 
+    // CORREÇÃO: Nomes dos DTOs ajustados para a sua estrutura
+    "GerarRelatorioReq": "GerarRelatorioReq.js",
+    "MensagemCreateReq": "MensagemCreateReq.js",
+    "MensagemResponseDTO": "MensagemResponseDTO.js",
+    "NotificacaoCreateReq": "NotificacaoCreateReq.js",
+    "NotificacaoResponseDTO": "NotificacaoResponseDTO.js",
+    "PontoResponseDTO": "PontoResponseDTO.js",
+    "PontoUpdateReq": "PontoUpdateReq.js",
+    "RelatorioRes": "RelatorioRes.js",
+    "UsuarioCreate": "UsuarioCreate.js",
+    "UsuarioLogin": "UsuarioLogin.js",
+    "UsuarioResponseDTO": "UsuarioResponseDTO.js",
+    "UsuarioUpdateReq": "UsuarioUpdateReq.js",
+
     // Configuração de Middlewares
     "authMiddleware": "authMiddleware.js",
 };
